@@ -1,3 +1,5 @@
+// Much inspired from https://github.com/avuop/webrtc-
+// With tweaks and additions
 'use strict';
 
 const socket = io.connect();
