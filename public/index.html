@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capstone Video Call</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="main-content">
+        <h1>Video Call</h1>
+        <div id="videos">
+            <div id="videoGrid" class="grid-container"></div>
+        </div>
+        
+        <div id="localVideo-container">
+            <video autoplay playsinline muted></video>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div id="deviceSelection">
+            <h3>Mic Input</h3>
+            <div class="input-group">
+                <label for="audioSource">Microphone:</label>
+                <select id="audioSource" class="custom-select"></select>
+            </div>
+            
+            <div class="input-group">
+                <label for="videoSource">Camera:</label>
+                <select id="videoSource" class="custom-select"></select>
+            </div>
+            
+            <button id="confirmDevices" class="primary-btn">
+                Confirm and Join
+            </button>
+        </div>
+
+        <div class="input-group">
+            <label for="roomId">Room ID</label>
+            <input id="roomId" type="text" placeholder="Enter room ID">
+        </div>
+
+        <div class="button-group">
+            <button id="joinBtn">Join Room</button>
+            <button id="leaveBtn">Leave Room</button>
+        </div>
+        
+        <p id="notification"></p>
+        <div class="video-controls">
+            <button id="muteBtn" class="control-btn">Mute</button>
+            <!-- You can add other controls here as needed -->
+          </div>
+        <!-- Chat Box -->
+        <h3>Text Chat</h3>
+        <div id="messages" style="border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: scroll;"></div>
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <input type="text" id="inputBox" placeholder="Type a message..." style="flex: 1; padding: 10px;">
+        <button id="sendBtn">Send</button>
+        </div>
+        
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/webrtc.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
